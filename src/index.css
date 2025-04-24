@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-dark text-white antialiased;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-md font-medium transition duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+  
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-600 focus:ring-primary-500 text-white;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary hover:bg-secondary-600 focus:ring-secondary-500 text-white;
+  }
+  
+  .btn-outline {
+    @apply border border-white hover:bg-white hover:text-dark focus:ring-white text-white;
+  }
+  
+  .card {
+    @apply overflow-hidden rounded-md shadow-lg transition-all duration-300;
+  }
+  
+  .input {
+    @apply w-full px-4 py-2 bg-dark-400 border border-gray-700 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent;
+  }
+  
+  .nav-link {
+    @apply text-gray-300 hover:text-white transition duration-200;
+  }
+  
+  .movie-card {
+    @apply relative overflow-hidden rounded-md transition-transform duration-300 hover:scale-105 hover:z-10 shadow-md;
+  }
+  
+  .movie-card-overlay {
+    @apply absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent opacity-0 transition-opacity duration-300 p-4 flex flex-col justify-end;
+  }
+  
+  .movie-card:hover .movie-card-overlay {
+    @apply opacity-100;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-dark-400;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-600 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-500;
+}
+
+/* Netflix-like navbar transparency to solid transition */
+.navbar-transparent {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, transparent 100%);
+  @apply transition-all duration-300;
+}
+
+.navbar-solid {
+  @apply bg-dark shadow-md;
+}
+
+/* Hero section gradient overlay */
+.hero-overlay {
+  background: linear-gradient(to top, #141414 0%, transparent 60%, rgba(0, 0, 0, 0.7) 100%);
+}
